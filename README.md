@@ -88,4 +88,18 @@ Para correr Linter y revisar si se necesita correcciones se utiliza el comando
 
 Puede corregir los errores manualmete o dejar que el Framework lo haga por usted utilizando
 > npm run linter-fix
-> 
+# Se utiliza Github Actions para la automatizacion de pruebas
+Crea un directorio en #
+```
+name: Run Tests in my project every push on GitHub
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Run Jest
+      uses: stefanoeb/jest-action@1.0.3
+```
